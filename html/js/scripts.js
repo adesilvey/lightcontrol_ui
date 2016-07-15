@@ -38,3 +38,22 @@ function lightswitch(light, switchNum) {
     turnLightOff(light);
   }
 }
+
+function checkSwitchStatus(light, switchNum) {
+  var url = "/light/" + light + "/status";
+
+  $.ajax({
+    url: url,
+    type: 'GET',
+    success: function(response) {
+      if(response == 1) {
+        $('#turnOnOff' + switchNum).attr('checked', true);
+      } else {
+        $('#turnOnOff' + switchNum).attr('checked', false);
+      }
+    },
+    error: function(response) {
+      console.log(response);
+    }
+  });
+}
