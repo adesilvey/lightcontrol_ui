@@ -7,6 +7,7 @@ server {
     server_name localhost;
 
     location /light {
-        proxy_pass http://10.0.0.89;
+        # Add ip of where pipincontrol is located
+        proxy_pass http://127.0.0.1;
     }
 }
