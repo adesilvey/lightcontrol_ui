@@ -1,6 +1,6 @@
 function turnLightOn(light) {
   console.log(light);
-  var url = "/light/" + light + "/on";  
+  var url = "/pin/" + light + "/on";  
 
   $.ajax({
     url: url,
@@ -15,7 +15,7 @@ function turnLightOn(light) {
 }
 
 function turnLightOff(light) {
-  var url = "/light/" + light + "/off";
+  var url = "/pin/" + light + "/off";
 
   $.ajax({
     url: url,
@@ -40,7 +40,7 @@ function lightswitch(light, switchNum) {
 }
 
 function checkSwitchStatus(light, switchNum) {
-  var url = "/light/" + light + "/status";
+  var url = "/pin/" + light + "/status";
 
   $.ajax({
     url: url,
